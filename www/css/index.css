@@ -1,0 +1,128 @@
+﻿/*
+ Esse é um software privado, copiar parte ou conteúdo completo é totalmente proibido. 
+ Caso você tenha acesso a esse conteúdo, deve excluir imediatamente.
+ 
+     Author     : Rodrigo Celebrone
+     Created at : 04/03/2015, 19:17
+     Updated at : 14/05/2015, 19:50
+ */
+
+@import url(jquery.mobile.structure-1.4.5.min.css);
+@import url(themes/jquery.mobile.icons.min.css);
+@import url(themes/theme.min.css);
+@import url('http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700');
+
+
+/* 
+    tags
+*/
+html, body, div, input, button, a, * {
+    border-width: 0;
+    font-family: 'Roboto Condensed', verdana, sans-serif;
+    font-weight: 400;
+    text-shadow:0 0 0;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+h1, h2, h3, h4{
+    text-align: center;
+    font-weight: 400;
+}
+div[data-role="page"], .ui-content{
+    background: #444 url(../images/bg.png) !important;
+}
+div[data-role="panel"]{
+    background-color: #444 !important;
+}
+div[data-role="header"]{
+    background: #000 url(../images/header.jpg);
+}
+a, button, select, label, a:hover, button:hover, label:hover, ul li {
+    border-width: 0 !important;
+}
+ul li {
+    border-bottom: 1px #666 solid !important;
+}
+    div.ui-content ul li a {
+        background: #629fb7 url(../images/bg-li.png) left top repeat-y !important;
+        font: 18px;
+    }
+
+ul li[data-nome] {
+    font-weight: 100;
+}
+
+ul li[data-nome] strong {
+    font-weight: 800;
+}
+
+/* 
+    Class
+*/
+.hide {
+    display: none;
+}
+.show {
+    display: block;
+}
+.invisible{
+    visibility: hidden;
+}
+.ocupado {
+    background: transparent url(../images/ocupado.png) no-repeat;
+}
+.livre {
+    background: transparent url(../images/livre.png) no-repeat;
+}
+.ocupado, .livre {
+    background-size: 100px 116px;
+    width: 100px;
+    height: 116px;
+    margin-left: -50px;
+    left: 50%;
+    position:relative;
+}
+.metade {
+    background-size: 50px 58px;
+    width: 50px;
+    height: 58px;
+    margin-left: -25px;
+}
+
+/* 
+    override UI
+*/
+div[data-role=page] div.ui-content {
+    text-align: center;
+}
+div[data-role=page] div.ui-content button, div[data-role=page] div.ui-content a[data-rule=button] {
+    margin: 0 auto;
+    font: 400 16px;
+}
+div[data-role=header] [data-role=button] {
+    font-size: 17px;
+    white-space:normal;
+}
+.ui-shadow, .ui-shadow-inset, .ui-overlay-shadow {
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+    text-shadow: 0 0 0;
+}
+.ui-loader {
+    background:none;
+    text-align:center;
+}
+.ui-icon-loading {
+    background: #0C9DB7 url(../images/ajax-loader.gif);
+    height:11px;
+    background-size: 16px 11px;
+}
+.ui-controlgroup-horizontal .ui-controlgroup-controls .ui-btn {
+    border-width: 0;
+}
+
+.ui-body-a, .ui-overlay-a { 
+    text-shadow:0 0 0; 
+}

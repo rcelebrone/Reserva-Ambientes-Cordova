@@ -1,0 +1,79 @@
+{
+    "cordova-plugin-camera": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-camera@latest"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-device": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-device@latest"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-device-orientation": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-device-orientation@latest"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "com.rjfun.cordova.extension": {
+        "source": {
+            "type": "registry",
+            "id": "com.rjfun.cordova.extension"
+        },
+        "is_top_level": false,
+        "variables": {}
+    },
+    "com.google.playservices": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/floatinghotpot/google-play-services",
+            "subdir": ".",
+            "ref": "r19"
+        },
+        "is_top_level": false,
+        "variables": {}
+    },
+    "com.okaybmd.cordova.plugin.datepicker": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/okaybmd/cordova-plugin-datepicker",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "com.google.cordova.admob": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/floatinghotpot/cordova-admob-pro.git",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-whitelist": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/apache/cordova-plugin-whitelist.git",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "org.apache.cordova.dialogs": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.dialogs"
+        },
+        "is_top_level": true,
+        "variables": {}
+    }
+}

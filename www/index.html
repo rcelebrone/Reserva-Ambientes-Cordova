@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' http://temgente.rcelebrone.com; font-src 'self' http://fonts.gstatic.com http://fonts.googleapis.com; script-src 'self' http://apps.admob.com; connect-src *; img-src 'self' data:; style-src *;">
+    <title>Tem Gente</title>
+
+    <!-- TemGenteV2 references -->
+    <link href="css/index.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div data-role="page" id="page-home">
+        <div data-role="header" data-position="fixed"><h1></h1></div>
+        <div role="main" class="ui-content">
+            <form id="page-home-login">
+                <label for="page-home-cadastrar">
+                    Criar usuário ?
+                    <input type="checkbox" id="page-home-cadastrar" value="1" checked class="ui-checkbox" />
+                </label>
+                <input type="text" id="page-home-nome" name="page-home-nome" maxlength="30" placeholder="Nome" class="ui-input-text hide" />
+                <input type="text" id="page-home-email" name="page-home-email" maxlength="50" placeholder="Email" />
+                <input type="password" id="page-home-senha" name="page-home-senha" maxlength="30" placeholder="Senha" autocomplete="off" />
+                <button type="button" class="ui-btn ui-icon-check ui-btn-icon-left ui-corner-all" id="page-home-enviar">Cadastrar</button>
+            </form>
+            <h4 id="page-home-mensagem"></h4>
+        </div>
+    </div>
+
+    <div data-role="page" id="page-lista-local">
+        <div data-role="header" data-position="fixed">
+            <a data-role="button" class="ui-btn ui-icon-plus ui-corner-all ui-btn-inline ui-btn-icon-notext" href="#page-criar-local">Criar</a>
+            <h1></h1>
+        </div>
+        <div role="main" class="ui-content">
+            <ul></ul>
+            <h4 id="page-lista-local-mensagem"></h4>
+        </div>
+    </div>
+
+    <div data-role="page" id="page-criar-local">
+        <div data-role="header" data-position="fixed">
+            <a data-role="button" class="ui-btn ui-icon-arrow-l ui-corner-all ui-btn-inline ui-btn-icon-notext" href="#page-lista-local">Voltar</a>
+            <h1></h1>
+        </div>
+        <div role="main" class="ui-content">
+            <form id="page-criar-local-cadastro">
+                <div data-role="controlgroup" data-type="horizontal">
+                    <select id="page-criar-local-agendavel">
+                        <option value="0">Simples</option>
+                        <option value="1">Agendamento</option>
+                    </select>
+                    <button type="button" class="ui-btn ui-icon-camera ui-btn-icon-left ui-corner-all ui-btn-inline ui-btn-icon-notext" id="page-criar-local-imagem-fotografar">Câmera</button>
+                    <button type="button" class="ui-btn ui-icon-grid ui-btn-icon-left ui-corner-all ui-btn-inline ui-btn-icon-notext" id="page-criar-local-imagem-biblioteca">Galeria</button>
+                </div>
+                <input type="text" id="page-criar-local-nome" maxlength="30" name="page-criar-local-nome" placeholder="Nome do Local" />
+                <input type="hidden" name="page-criar-local-imagem-base64" maxlength="21845" id="page-criar-local-imagem-base64" />
+                <br />
+                <button type="button" class="ui-btn ui-icon-check ui-btn-icon-left ui-corner-all" id="page-criar-local-cadastrar">Cadastrar</button>
+            </form>
+            <h4 id="page-criar-local-mensagem"></h4>
+            <img alt="" id="page-criar-local-imagem-canvas" border="0" />
+        </div>
+    </div>
+
+    <div data-role="page" id="page-local">
+        <div data-role="header" data-position="fixed">
+            <a data-role="button" class="ui-btn ui-icon-arrow-l ui-corner-all ui-btn-inline ui-btn-icon-notext" href="#page-lista-local">Voltar</a>
+            <h1></h1>
+            <a href="#page-local-painel" class="ui-btn ui-icon-bars ui-corner-all ui-btn-inline ui-btn-icon-notext">Painel</a>
+        </div>
+        <div role="main" class="ui-content">
+            <div id="page-local-situacao"></div>
+            <div data-role="controlgroup" data-type="horizontal">
+                <button type="button" class="hide ui-btn ui-corner-all" id="page-local-agendar-de" data-text="De:">De:</button>
+                <button type="button" class="hide ui-btn ui-corner-all" id="page-local-agendar-ate" data-text="Até:">Até:</button>
+            </div>
+            <button type="button" class="hide ui-btn ui-icon-check ui-btn-icon-left ui-corner-all ui-btn-inline" id="page-local-agendar">Reservar</button>
+            <button type="button" class="hide ui-btn ui-icon-recycle ui-btn-icon-left ui-corner-all ui-btn-inline" id="page-local-ocupar">Colocar em uso</button>
+            <button type="button" class="hide ui-btn ui-icon-recycle ui-btn-icon-left ui-corner-all ui-btn-inline" id="page-local-desocupar">Deixar disponível</button>
+            <h4 id="page-local-mensagem"></h4>
+        </div>
+        <div data-role="panel" id="page-local-painel" data-position="right" data-display="overlay">
+            <ul data-role="listview">
+                <li> <a class="ui-btn ui-icon-user ui-btn-icon-left" href="#page-convidar">Convidar</a> </li>
+                <li> <a class="ui-btn ui-icon-delete ui-btn-icon-left hide" id="page-local-agendamentos-remover">Excluir agendamentos</a> </li>
+                <li> <a class="ui-btn ui-icon-power ui-btn-icon-left" id="page-local-sair">Sair desse local</a> </li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="page" id="page-convidar">
+        <div data-role="header" data-position="fixed">
+            <a data-role="button" class="ui-btn ui-icon-arrow-l ui-corner-all ui-btn-inline ui-btn-icon-notext" href="#page-local">Voltar</a>
+            <h1></h1>
+        </div>
+        <div role="main" class="ui-content">
+            <form id="page-convidar-cadastro">
+                <input type="text" id="page-convidar-email" maxlength="50" name="page-convidar-email" placeholder="Email do usuário" />
+                <button type="button" class="ui-btn ui-icon-mail ui-btn-icon-left ui-corner-all ui-btn-inline" id="page-convidar-adicionar">Enviar convite</button>
+            </form>
+            <h4 id="page-convidar-mensagem"></h4>
+        </div>
+    </div>
+
+    <!-- Cordova reference, this is added to your app when it's built. -->
+    <script src="cordova.js"></script>
+    <script src="scripts/platformOverrides.js"></script>
+    <script src="scripts/jquery/jquery-1.11.1.min.js"></script>
+    <script src="scripts/index.js"></script>
+    <script src="scripts/jquery-mobile/jquery.mobile-1.4.5.min.js"></script>
+</body>
+</html>
